@@ -4,6 +4,8 @@
 
 Data is more powerful when we share it with others! Let's take what we've learned about HTML and CSS to create a dashboard showing off the analysis we've done.
 
+<strong><a href="https://kk-deng.github.io/Web-Design-Challenge/">Click to access the deployed website</a></strong>
+
 ## File Index
 
 Following files are attached:
