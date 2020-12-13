@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Personal css -->
-    <link rel="stylesheet" href="assets/css/style.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/style.css" media="screen">
 
-    <title>Latitude Analysis Dashboard</title>
+    <title>Humidity Analysis</title>
   </head>
 
   <body>
@@ -21,7 +21,7 @@
       <div class="container">
 
         <!-- Logo & Brand -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="../index.html">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-map" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98l4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
           </svg>
@@ -35,22 +35,22 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExample07">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plots</a>
+              <a class="nav-link dropdown-toggle active" href="" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plots <span class="sr-only">(current)</span></a>
               <div class="dropdown-menu shadow" aria-labelledby="dropdown07">
-                <a class="dropdown-item" href="visualizations/maxtemp.html" alt="">Max Temperature</a>
-                <a class="dropdown-item" href="visualizations/humidity.html" alt="">Humidity</a>
-                <a class="dropdown-item" href="visualizations/cloudiness.html" alt="">Cloudiness</a>
-                <a class="dropdown-item" href="visualizations/windspeed.html" alt="">Wind Speed</a>
+                <a class="dropdown-item" href="maxtemp.html" alt="">Max Temperature</a>
+                <a class="dropdown-item" href="humidity.html" alt="">Humidity</a>
+                <a class="dropdown-item" href="cloudiness.html" alt="">Cloudiness</a>
+                <a class="dropdown-item" href="windspeed.html" alt="">Wind Speed</a>
               </div>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="comparison.html">Comparison</a>
+              <a class="nav-link" href="../comparison.html">Comparison</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="data.html">Data</a>
+              <a class="nav-link" href="../data.html">Data</a>
             </li>
 
           </ul>
@@ -67,17 +67,19 @@
         <div class="row">
           <div class="col-xs-12 col-md-8">
             <div class="jumbotron">
-              <h1>Summary: Latitude vs. X</h1>
+              <h1>Humidity</h1>
               <hr>
               <div class="container">
-                <img src="assets/images/Fig1.png" class="float-left img-m">
-                <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. 
-                  To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
-                <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude. 
-                  Factors we looked at included: temperature, cloudiness, wind speed, and humidity. 
-                  This site provides the source data and visualizations created as part of the analysis, 
-                  as well as explanations and descriptions of any trends and correlations witnessed.</p>
-                
+                <img src="../assets/images/Fig2.png" class="vis-img">
+                <p>
+                  We can see the most cities have higher humidity as shown below. This script got the random latitudes 
+                  and longtitudes between (-90 to 90) and (-180 to 180). However, the <strong>main defect</strong> of this 
+                  theoretical assumption is that <strong>most area on the earth is covered by ocean where has much fewer cities 
+                  than the continents</strong>. <i>citipy</i> only get the closest city of the random coordinates. When it comes to 
+                  the ocean coordinates, all cities along the coastline would be collected into the dataframe. 
+                  Those cities are highly humid <strong>due to the ocean currents</strong>, resulting in the relatively higher humidity 
+                  scatter points in this dataset.
+                </p>
               </div>
 
             </div>
@@ -89,14 +91,14 @@
             <hr>
             <div class="row">
               <div class="col-md-6 col-sm-3">
-                <a href="visualizations/maxtemp.html">
-                  <img src="assets/images/Fig1.png" class="img-thumbnail rounded">
+                <a href="maxtemp.html" alt="Max Temperature">
+                  <img src="../assets/images/Fig1.png" class="img-thumbnail rounded">
                 </a>
               </div>
 
               <div class="col-md-6 col-sm-3">
-                <a href="visualizations/humidity.html">
-                  <img src="assets/images/Fig2.png" class="img-thumbnail rounded">
+                <a href="humidity.html" alt="Humidity">
+                  <img src="../assets/images/Fig2.png" class="img-thumbnail rounded vis-img-border">
                 </a>
               </div>
               
@@ -104,13 +106,13 @@
               <div class="w-100 d-none d-md-block"></div>
 
               <div class="col-md-6 col-sm-3">
-                <a href="visualizations/cloudiness.html">
-                  <img src="assets/images/Fig3.png" class="img-thumbnail rounded">
+                <a href="cloudiness.html" alt="Cloudiness">
+                  <img src="../assets/images/Fig3.png" class="img-thumbnail rounded">
                 </a>
               </div>
               <div class="col-md-6 col-sm-3">
-                <a href="visualizations/windspeed.html">
-                  <img src="assets/images/Fig4.png" class="img-thumbnail rounded">
+                <a href="windspeed.html" alt="Wind Speed">
+                  <img src="../assets/images/Fig4.png" class="img-thumbnail rounded">
                 </a>
               </div>
 
@@ -119,31 +121,6 @@
 
         </div>
       </div>
-
-
-      <!-- <div class="container">
-        
-        <div class="row">
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-          </div>
-        </div>
-
-        
-
-      </div> /container -->
 
       <hr>
     </main>
